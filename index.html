@@ -1,0 +1,95 @@
+<!-- todos los documentos HTML empiezan con el doctype, que indica al navegador la versión de HTML -->
+<!DOCTYPE html>
+<!-- el contenido del documento va dentro de la etiqueta <html></html> -->
+<!-- el idioma se indica con el atributo "lang" -->
+<html lang="es">
+<!-- en la etiqueta head definimos información importante, pero que no será visible -->
+
+<head>
+    para que sea responsive (adaptable a cualquier resolución)
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- para que se lean correctamente símbolos y carácteres como las tildes -->
+    <meta charset="utf-8" />
+    <!-- el título que aparece en la pestaña del navegador (muy importante para el SEO -optimización para buscadores-) -->
+    <title>Ejemplo 1</title>
+    <!-- las hojas de estilos se deben insertar antes del contenido al que aplicaremos el estilo -->
+    <!-- en este caso la hoja de estilos está en la carpeta css y se llama style.css, lo indicamos en el atributo href -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<!-- en el body se encuentra la parte visible del documento, lo que verá el usuario -->
+
+<body>
+    <!-- para definir la estructura o "layout" de nuestra página podemos usar grid -->
+    <!-- en este caso aplicamos grid a una clase que hemos llamado grid-container, que envuelve nuestro layout -->
+    <div class="grid-container">
+        <!-- como puede haber varios header en un documento, le añadimos una clase personalizada,
+        así podemos seleccionarlo para darle estilo de forma más precisa -->
+        <header class="main-header">
+            <!-- solo debería haber un texto de encabezado principal o h1 por documento HTML -->
+            <!-- aun así es buena práctica utilizar clases para aplicar estilos al HTML, si es necesario -->
+            <h1 class="heading">Mi Página</h1>
+        </header>
+        <!-- como puede haver varios nav, también le añadimos una clase personalizada -->
+        <nav class="main-nav">
+            <!-- es habitual organizar los menús en forma de lista -->
+            <!-- podemos distribuir los elementos de la lista en horizontal utilizando flex en CSS -->
+            <ul>
+                <!-- es habitual usar # si todavía no sabemos la URL, de esta forma el enlace no está roto -->
+                <li><a href="#">inicio</a></li>
+                <li><a href="#">quiénes somos</a></li>
+                <li><a href="#">contacto</a></li>
+                <!-- ejemplo de enlace a externo -->
+                <li><a href="https://www.google.com/">Google</a></li>
+            </ul>
+        </nav>
+        <!-- la etiqueta <main> suele contener el contenido principal de la página (una noticia, la lista de productos...) -->
+        <main>
+            <h2>Este es el contenido principal de la página</h2>
+            <p>Este es un párrafo de ejemplo en la sección principal de la página.</p>
+            <!-- con grid también podemos crear galerías de elementos (imágenes, otros divs, articles o cualquier etiqueta HTML realmente) -->
+            <!-- en la clase .gallery definimos un grid responsive -->
+            <section class="gallery">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="retrato de una mujer" />
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="retrato de una mujer" />
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="retrato de una mujer" />
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="retrato de una mujer" />
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="retrato de una mujer" />
+            </section>
+        </main>
+        <!-- aside suele usarse para contener elementos que flotan alrededor del contenido principal -->
+        <!-- como puede haber varias, le añadimos una clase -->
+        <aside class="sidebar">
+            <!-- article suele utilizarse para elementos que tienen su propia "entidad", por ejemplo, la ficha de una película, un producto, un artículo de blog.
+            no tiene sentido para una imagen decorativa o un párrafo suelto, en este caso entendemos que el párrafo acompañaría a la imagen como un mismo "anuncio" -->
+            <article>
+                <p>Esto es una barra lateral</p>
+                <!-- es buena prácticadar un tamaño en línea (como excepción) a las imágenes,
+                para evitar que la interfaz se mueva demasiado para el usuario conforme carga el contenido
+                de esta forma se "reserva el espacio" -->
+                <!-- IMPORTARNTE: luego hay que darle el tamaño o proporción que realmente nos interesa con CSS -->
+                <img class="sidebar-image" width="100" height="200"
+                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                    alt="retrato de una mujer" />
+            </article>
+        </aside>
+        <!-- puede haber más de un footer -->
+        <footer class="main-footer">
+            <!-- aquí también podemos utilizar nav, ya que sería otro menú de navegación -->
+            <nav>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>
